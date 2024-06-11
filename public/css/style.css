@@ -1,0 +1,23 @@
+main{
+    perspective: 800px;
+}
+#titulo_postagem{
+    margin-top: -1.5vh;
+}
+#autor_postagem{
+    margin-bottom: -1.5vh;
+}
+#texto_postagem{
+    max-height: 100px;
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+}
+#postagem{
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+#postagem:hover{
+    box-shadow: 0px 0px 10px blue;
+    transform:scale(1.02)
+}

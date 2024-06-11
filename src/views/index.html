@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Página inicial</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
+        <link rel="stylesheet" href="/css/style.css">        
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand mb-3 mt-3 d-flex" href="./">
+                    <img src="/images/logo.png" alt="" width="60" height="48" class="d-inline-block align-text-top">
+                    <h1 class="me-3">Blog de games</h1>
+                </a>
+                <div class="row align-middle">
+                    {{#admin}}
+                    <div class="col align-middle">
+                        <a href="./administrador"><h4 style="color: black">Administrador</h4></a>
+                    </div>
+                    {{/admin}}
+                    <div class="col align-middle">
+                        <a href="./cadastrarUsuario"><h4 style="color: black">Cadastro</h4></a>
+                    </div>
+                    <div class="col align-middle">
+                        <a href="./login"><h4 style="color: black">Entrar</h4></a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </nav>
+        <main>
+            {{#sucesso}}
+            <div class="alert alert-success" role="alert">
+                Postagem cadastrada com sucesso!
+            </div>
+            {{/sucesso}}
+            {{#erro}}
+            <div class="alert alert-danger" role="alert">
+                Postagem Não cadastrada!!
+            </div>
+            {{/erro}}
+            {{#postagems}}
+            <a id="a_postagem" href="./visualizarPostagem/{{id}}" style="text-decoration: none; color: black;">
+                <div id="postagem" class="container mt-4 mb-4">
+                    <div class="row ">
+                        <div id="imagem_postagem" class="col-3">
+                            <img src="{{imagemLink}}" class="img-thumbnail">
+                        </div>
+                        <div id="textos" class="col-9  p-3">
+                            <div id="titulo_postagem" class="row mb-3">
+                                <h5 style="padding-left: 0;">{{titulo}}</h5>
+                            </div>
+
+                            <div id="texto_postagem" class="row">
+                                {{texto}}
+                            </div>
+                            
+                            <div id="autor_postagem" class="row">
+                                leia mais..<br><br>
+                                <h6 style="padding-left: 0;">{{autor}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {{/postagems}}                       
+        </main>
+        
+    </body>
+</html>
