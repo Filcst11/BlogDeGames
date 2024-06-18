@@ -18,7 +18,7 @@ function cadastrar(req, res) {
     }).catch((err)=>{
         console.log(err);
         let erro = true;
-        res.render('cadastrarUsuario', {erro});
+        res.render('cadastrarUsuario.html', {erro});
     });
 }
 
