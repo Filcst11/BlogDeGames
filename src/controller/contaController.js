@@ -89,7 +89,7 @@ async function adminExcluirConta(req, res){
     const userid = req.params.id
     const usuario = await Usuario.findByPk(userid)
 
-    if (req.session.usuario.id === usuario.id) {
+    if (req.session.usuario.id === usuario) {
         await usuario.destroy();
         req.session.destroy();
         return res.redirect('/');
